@@ -1,9 +1,9 @@
-import 'file:///D:/flutter_/flumeride_/flumeride_first/lib/model/user_model.dart';
+import 'package:flumeride_first/model/user_model.dart';
 
 class Message {
   final User sender;
   final String
-  time; // Would usually be type DateTime or Firebase Timestamp in production apps
+      time; // Would usually be type DateTime or Firebase Timestamp in production apps
   final String text;
   final bool isLiked;
   final bool unread;
@@ -63,8 +63,6 @@ final User steven = User(
 
 // FAVORITE CONTACTS
 List<User> favorites = [sam, steven, olivia, john, greg];
-
-
 
 // EXAMPLE MESSAGES IN CHAT SCREEN
 List<Message> messages = [

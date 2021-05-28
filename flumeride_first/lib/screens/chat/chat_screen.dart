@@ -1,7 +1,7 @@
-import 'file:///D:/flutter_/flumeride_/flumeride_first/lib/model/chat_model.dart';
-import 'file:///D:/flutter_/flumeride_/flumeride_first/lib/model/user_model.dart';
 import 'package:flumeride_first/constants.dart';
+import 'package:flumeride_first/model/chat_model.dart';
 import 'package:flumeride_first/model/home_list_model.dart';
+import 'package:flumeride_first/model/user_model.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -19,27 +19,27 @@ class _ChatScreenState extends State<ChatScreen> {
     final Container msg = Container(
       margin: isMe
           ? EdgeInsets.only(
-        top: 8.0,
-        bottom: 8.0,
-        left: 80.0,
-      )
+              top: 8.0,
+              bottom: 8.0,
+              left: 80.0,
+            )
           : EdgeInsets.only(
-        top: 8.0,
-        bottom: 8.0,
-      ),
+              top: 8.0,
+              bottom: 8.0,
+            ),
       padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
       width: MediaQuery.of(context).size.width * 0.75,
       decoration: BoxDecoration(
-        color: isMe ? kPrimaryColor: Color(0xFFFFEFEE),
+        color: isMe ? kPrimaryColor : Color(0xFFFFEFEE),
         borderRadius: isMe
             ? BorderRadius.only(
-          topLeft: Radius.circular(15.0),
-          bottomLeft: Radius.circular(15.0),
-        )
+                topLeft: Radius.circular(15.0),
+                bottomLeft: Radius.circular(15.0),
+              )
             : BorderRadius.only(
-          topRight: Radius.circular(15.0),
-          bottomRight: Radius.circular(15.0),
-        ),
+                topRight: Radius.circular(15.0),
+                bottomRight: Radius.circular(15.0),
+              ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,7 +93,7 @@ class _ChatScreenState extends State<ChatScreen> {
           IconButton(
             icon: Icon(Icons.send),
             iconSize: 25.0,
-            color:kPrimaryColor,
+            color: kPrimaryColor,
             onPressed: () {},
           ),
         ],
@@ -107,7 +107,7 @@ class _ChatScreenState extends State<ChatScreen> {
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
         title: Text(
-          shows[2]['title'],//widget.user.name,
+          shows[2]['title'], //widget.user.name,
           style: TextStyle(
             fontSize: 16.0,
             fontWeight: FontWeight.bold,
@@ -130,14 +130,15 @@ class _ChatScreenState extends State<ChatScreen> {
             Expanded(
               child: NotificationListener<OverscrollIndicatorNotification>(
                 onNotification: (OverscrollIndicatorNotification overscroll) {
-              overscroll.disallowGlow();
-              return; },
+                  overscroll.disallowGlow();
+                  return;
+                },
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
                   ),
                   child: ClipRRect(
-                      child: ListView.builder(
+                    child: ListView.builder(
                       reverse: true,
                       padding: EdgeInsets.only(top: 15.0),
                       itemCount: messages.length,
@@ -146,7 +147,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         final bool isMe = message.sender.id == currentUser.id;
                         return _buildMessage(message, isMe);
                       },
-                      ),
+                    ),
                   ),
                 ),
               ),

@@ -29,10 +29,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_svg: ^0.21.0-nullsfety.0
-  provider: ^4.3.1 # for State management
-  image_picker: ^0.7.5+2
-  http: ^0.13.3
-  hotreloader: ^3.0.1
+  provider: # for State management
+  image_picker:
+  http: 
+  hotreloader: 
   localstorage:
   shared_preferences:
   flutter_webrtc:
